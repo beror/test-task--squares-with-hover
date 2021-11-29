@@ -61,7 +61,7 @@ const HoverList = ({ width, hoveredSquares }: HoverListProps) => {
         <>
             <div className={listHeaderClassName}>Hovered squares</div>
             <div className={listClassName}>
-                { hoveredSquares.map(item => <div className={itemClassName}>Row: { getRowAndColumn(item)[0] }, Col: { getRowAndColumn(item)[1] } </div>) }
+                { hoveredSquares.map((item, index) => <div className={itemClassName} key={index}>Row: { getRowAndColumn(item)[0] }, Col: { getRowAndColumn(item)[1] } </div>) }
             </div>
         </>
     );
