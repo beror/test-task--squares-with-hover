@@ -108,7 +108,7 @@ const App = () => {
     };
 
     // grid contains a single property - a mutable representation of itself.
-    // This is done to improve performance (so that updating grid takes O(n))
+    // This is done to improve performance (so that updating grid takes O(1))
     const [ grid, setGrid ] = useReducer( gridReducer, { mutableGrid: new Array(width*width).fill(false) } );
     // grid (its dimensions) is updated when width is updated
     useEffect( () => setGrid( { type: gridActions.SET, payload: new Array(width*width).fill(false) } ), [width, gridActions.SET] );
